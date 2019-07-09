@@ -1,3 +1,19 @@
+
+Sudoku is a 9x9 matrix filled with numbers 1 to 9 in such a way that every row, column and sub-matrix (3x3) has each of the digits from 1 to 9. We are provided with a partially filled 9x9 matrix and have to fill every remaining cell in it.
+
+You can see that every row, column, and sub-matrix (3x3) contains each digit from 1 to 9. Thus, we can also conclude that a Sudoku is considered wrongly filled if it satisfies any of these criteria:
+
+1. Any row contains the same number more than once.
+2. Any column contains the same number more than once.
+3. Any 3x3 sub-matrix has the same number more than once.
+
+In backtracking, we first start with a sub-solution and if this sub-solution doesn't give us a correct final answer, then we just come back and change our sub-solution. We are going to solve our Sudoku in a similar way. The steps which we will follow are:
+
+- If there are no unallocated cells, then the Sudoku is already solved. We will just return true.
+- Or else, we will fill an unallocated cell with a digit between 1 to 9 so that there are no conflicts in any of the rows, columns, or the 3x3 sub-matrices.
+- Now, we will try to fill the next unallocated cell and if this happens successfully, then we will return true.
+- Else, we will come back and change the digit we used to fill the cell. If there is no digit which fulfills the need, then we will just return false as there is no solution of this Sudoku.
+
 ```JAVA
 class Sudoku
 {
@@ -97,3 +113,4 @@ class Sudoku
 	}
 }
 ```
+![](https://ws1.sinaimg.cn/large/006tNc79ly1g4u8qbr4xlj308u09ydft.jpg)
