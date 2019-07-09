@@ -1,8 +1,8 @@
-## Descript	（medium）
+# Description(medium）
 
 ![](https://ws3.sinaimg.cn/large/006tNc79ly1g4tz5xribgj313w0py0wr.jpg)
 
-## Approach 1: Backtracking
+# Approach 1: Backtracking
 
 This is the inefficient solution where we try every single jump pattern that takes us from the first position to the last. We start from the first position and jump to every index that is reachable. We repeat the process until last index is reached. When stuck, backtrack.
 
@@ -39,6 +39,6 @@ Time complexity: O(2^n). There are n²(upper bound) ways of jumping from the fir
 Space complexity: O(n). Recursion requires additional memory for the stack frames. 
 
 
-## Conclusion
+# Conclusion
 
 
