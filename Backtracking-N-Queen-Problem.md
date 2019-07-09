@@ -2,7 +2,7 @@ Input:
 The size of a chess board. Generally, it is 8. as (8 x 8 is the size of a normal chess board.)
 
 Output:
-All the possible boardrixes that represent in which row and column the N Queens can be placed.
+All the possible matrixes that represent in which row and column the N Queens can be placed.
 If the solution does not exist, it will return false.
 
 	1 0 0 0 0 0 0 0
@@ -42,7 +42,7 @@ class NQueen
 		for (int i = r, j = c; i >= 0 && j < N; i--, j++)
 			if (board[i][j] == 1)
 				return false;
-
+				
 		return true;
 	}
 
@@ -58,7 +58,6 @@ class NQueen
 				System.out.println();
 			}
 			System.out.println();
-
 			return;
 		}
 
@@ -71,10 +70,8 @@ class NQueen
 			{
 				// place queen on current square
 				board[r][i] = 1;
-
 				// recur for next row
 				nQueen(board, r + 1);
-
 				// backtrack and remove queen from current square
 				board[r][i] = 0;
 			}
@@ -93,7 +90,7 @@ class NQueen
 			for(int j = 0; j < N; j++)
 				board[i][j]=0;
 		}
-
+		
 		nQueen(board, 0);
 	}
 }
