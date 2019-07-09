@@ -5,7 +5,7 @@
 
 ## Part I - Algorithms
 * [Backtracking]
-	* [1. N Queens Problem]
+	* [1. N Queens Problem](Backtracking-N-Queen-Problem.md)
 	* [2. Warnsdorff’s Algorithm]
 	* [3. Word Break Problem]
 	* [4. Remove Invalid Parenthesis]
