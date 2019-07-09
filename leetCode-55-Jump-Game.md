@@ -1,6 +1,4 @@
-# Description(medium）
-
-![](https://ws3.sinaimg.cn/large/006tNc79ly1g4tz5xribgj313w0py0wr.jpg)
+![](https://ws2.sinaimg.cn/large/006tNc79ly1g4u0imstg8j313w0pymy6.jpg)
 
 # Approach 1: Backtracking
 
@@ -32,9 +30,8 @@ class Solution {
 	}
 }
 ```
-Complexity Analysis
 
-Time complexity: O(2^n). There are n²(upper bound) ways of jumping from the first position to the last, where nn is the length of array nums. For a complete proof, please refer to Appendix A.
+Time complexity: O(2<sup>n</sup>). There are 2<sup>n</sup>(upper bound) ways of jumping from the first position to the last, where n is the length of array nums. For a complete proof, please refer to Appendix A.
 
 Space complexity: O(n). Recursion requires additional memory for the stack frames. 
 
