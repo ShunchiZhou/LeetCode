@@ -4,7 +4,7 @@
 * [Introduction](README.md)
 
 ## Part I - Algorithms
-* [Backtracking](Top-20-Backtracking-Algorithm-Interview-Questions)
+* [Backtracking]
 	* [1. N Queens Problem]
 	* [2. Warnsdorff’s Algorithm]
 	* [3. Word Break Problem]
@@ -12,7 +12,7 @@
 	* [5. Match a pattern and string using regular expression]
 	* [6. Find Path from corner cell to middle cell in a maze]
 	* [7. Hamiltonian cycle]
-	* [8. Sudoku]
+	* [8. Sudoku](Backtracking-Sudoku.md)
 	* [9. M Coloring Problem]
 	* [10. Rat in a Maze]
 	* [11. Print all permutations of a given string]
