@@ -31,4 +31,5 @@
 * [61. Rotate List](leetCode-61-Rotate-List.md)
 * [62. Unique Paths](leetCode-62-Unique-Paths.md)
 * [63. Unique Paths II](leetCode-63-Unique-Paths-II.md)
+* [66. Plus One](leetCode-66-Plus-One.md)
 
