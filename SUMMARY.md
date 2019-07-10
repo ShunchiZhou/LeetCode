@@ -32,4 +32,5 @@
 * [62. Unique Paths](leetCode-62-Unique-Paths.md)
 * [63. Unique Paths II](leetCode-63-Unique-Paths-II.md)
 * [66. Plus One](leetCode-66-Plus-One.md)
+* [67. Add Binary](leetCode-67-Add-Binary.md)
 
