@@ -1,4 +1,4 @@
-![](https://ws2.sinaimg.cn/large/006tNc79ly1g4u0imstg8j313w0pymy6.jpg)
+![](https://ws2.sinaimg.cn/large/006tNc79ly1g4v8vb5didj30zo0r6ab1.jpg)
 
 # Approach 1
 ``` java
