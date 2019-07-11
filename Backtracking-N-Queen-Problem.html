@@ -1,0 +1,745 @@
+
+<!DOCTYPE HTML>
+<html lang="en" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>1. N Queens Problem · leetcode</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="shunchizhou">
+        
+        
+    
+    <link rel="stylesheet" href="gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-katex/katex.min.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-anchor-navigation-ex/style/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-search-plus/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: "ca-pub-1480477141602191",
+    enable_page_level_ads: true
+  });
+</script>
+    
+    <meta  name="baidu-site-verification"  content="iFzduP9Qsi" >
+    
+    <meta  name="google-site-verification"  content="qwgHd8kl7vEvBa4OR81jLieQG9UKcY2r8ocztMhzA8o" >
+    
+    
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    
+
+
+    <style>
+    @media only screen and (max-width: 640px) {
+        .book-header .hidden-mobile {
+            display: none;
+        }
+    }
+    </style>
+    <script>
+        window["gitbook-plugin-github-buttons"] = {"buttons":[{"user":"shunchizhou","repo":"leetcode","type":"star","size":"small","count":true}]};
+    </script>
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+    
+        
+        <li>
+            <a href="http://shunchizhou.com" target="_blank" class="custom-link">Home</a>
+        </li>
+    
+    
+
+    
+    <li class="divider"></li>
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Part I - Algorithms</li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" >
+            
+                <span>
+            
+                    
+                    [Backtracking]
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter active" data-level="2.1.1" data-path="Backtracking-N-Queen-Problem.html">
+            
+                <a href="Backtracking-N-Queen-Problem.html">
+            
+                    
+                    1. N Queens Problem
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.2" >
+            
+                <span>
+            
+                    
+                    [2. Warnsdorff’s Algorithm]
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.3" >
+            
+                <span>
+            
+                    
+                    [3. Word Break Problem]
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.4" >
+            
+                <span>
+            
+                    
+                    [4. Remove Invalid Parenthesis]
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.5" >
+            
+                <span>
+            
+                    
+                    [5. Match a pattern and string using regular expression]
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.6" >
+            
+                <span>
+            
+                    
+                    [6. Find Path from corner cell to middle cell in a maze]
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.7" >
+            
+                <span>
+            
+                    
+                    [7. Hamiltonian cycle]
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.8" data-path="Backtracking-Sudoku.html">
+            
+                <a href="Backtracking-Sudoku.html">
+            
+                    
+                    8. Sudoku
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.9" >
+            
+                <span>
+            
+                    
+                    [9. M Coloring Problem]
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.10" >
+            
+                <span>
+            
+                    
+                    [10. Rat in a Maze]
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.11" >
+            
+                <span>
+            
+                    
+                    [11. Print all permutations of a given string]
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.12" >
+            
+                <span>
+            
+                    
+                    [12. Crptarithmetic puzzle]
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.13" >
+            
+                <span>
+            
+                    
+                    [13. Find if there is a path of more than k length from a source]
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.14" >
+            
+                <span>
+            
+                    
+                    [14. Shortest safe route in a path with landmines]
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.15" >
+            
+                <span>
+            
+                    
+                    [15. Partition of a set into k subsets with equal sum]
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.16" >
+            
+                <span>
+            
+                    
+                    [16. longest possible route in a matrix with hurdles]
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.17" >
+            
+                <span>
+            
+                    
+                    [17. Print palindromic partitions string]
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.18" >
+            
+                <span>
+            
+                    
+                    [18. Print all possible paths from top left to bottom right of a mXn matrix]
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.19" >
+            
+                <span>
+            
+                    
+                    [19. Subset sum]
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.20" >
+            
+                <span>
+            
+                    
+                    [20. Tug of war]
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Part II - LeetCode</li>
+        
+        
+    
+        <li class="chapter " data-level="3.1" data-path="leetCode-55-Jump-Game.html">
+            
+                <a href="leetCode-55-Jump-Game.html">
+            
+                    
+                    55. Jump Game
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" data-path="leetCode-61-Rotate-List.html">
+            
+                <a href="leetCode-61-Rotate-List.html">
+            
+                    
+                    61. Rotate List
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3" data-path="leetCode-62-Unique-Paths.html">
+            
+                <a href="leetCode-62-Unique-Paths.html">
+            
+                    
+                    62. Unique Paths
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4" data-path="leetCode-63-Unique-Paths-II.html">
+            
+                <a href="leetCode-63-Unique-Paths-II.html">
+            
+                    
+                    63. Unique Paths II
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.5" data-path="leetCode-66-Plus-One.html">
+            
+                <a href="leetCode-66-Plus-One.html">
+            
+                    
+                    66. Plus One
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.6" data-path="leetCode-67-Add-Binary.html">
+            
+                <a href="leetCode-67-Add-Binary.html">
+            
+                    
+                    67. Add Binary
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.7" data-path="leetCode-67-Sqrt.md">
+            
+                <span>
+            
+                    
+                    69. Sqrt(x)
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="." >1. N Queens Problem</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div class="search-plus" id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <p>Input:
+The size of a chess board. Generally, it is 8. as (8 x 8 is the size of a normal chess board.)</p>
+<p>Output:
+All the possible matrixes that represent in which row and column the N Queens can be placed.
+If the solution does not exist, it will return false.</p>
+<pre><code>1 0 0 0 0 0 0 0
+0 0 0 0 0 0 1 0
+0 0 0 0 1 0 0 0
+0 0 0 0 0 0 0 1
+0 1 0 0 0 0 0 0
+0 0 0 1 0 0 0 0
+0 0 0 0 0 1 0 0
+0 0 1 0 0 0 0 0
+</code></pre><p>In this output, the value 1 indicates the correct place for the queens.
+The 0 denotes the blank spaces on the chess board.</p>
+<pre><code class="lang-JAVA"><span class="hljs-keyword">import</span> java.util.Arrays;
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">NQueen</span>
+</span>{
+    <span class="hljs-comment">// N x N chessboard</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">final</span> <span class="hljs-keyword">int</span> N = <span class="hljs-number">8</span>;
+
+    <span class="hljs-comment">// Function to check if two queens threaten each other or not</span>
+    <span class="hljs-function"><span class="hljs-keyword">static</span> <span class="hljs-keyword">boolean</span> <span class="hljs-title">isSafe</span><span class="hljs-params">(<span class="hljs-keyword">int</span> board[][], <span class="hljs-keyword">int</span> r, <span class="hljs-keyword">int</span> c)</span>
+    </span>{
+        <span class="hljs-comment">// return false if two queens share the same column</span>
+        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; r; i++)
+            <span class="hljs-keyword">if</span> (board[i][c] == <span class="hljs-number">1</span>)
+                <span class="hljs-keyword">return</span> <span class="hljs-keyword">false</span>;
+
+        <span class="hljs-comment">// return false if two queens share the same \ diagonal</span>
+        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = r, j = c; i &gt;= <span class="hljs-number">0</span> &amp;&amp; j &gt;= <span class="hljs-number">0</span>; i--, j--)
+            <span class="hljs-keyword">if</span> (board[i][j] == <span class="hljs-number">1</span>)
+                <span class="hljs-keyword">return</span> <span class="hljs-keyword">false</span>;
+
+        <span class="hljs-comment">// return false if two queens share the same / diagonal</span>
+        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = r, j = c; i &gt;= <span class="hljs-number">0</span> &amp;&amp; j &lt; N; i--, j++)
+            <span class="hljs-keyword">if</span> (board[i][j] == <span class="hljs-number">1</span>)
+                <span class="hljs-keyword">return</span> <span class="hljs-keyword">false</span>;
+
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">true</span>;
+    }
+
+    <span class="hljs-function"><span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">nQueen</span><span class="hljs-params">(<span class="hljs-keyword">int</span> board[][], <span class="hljs-keyword">int</span> r)</span>
+    </span>{
+        <span class="hljs-comment">// if N queens are placed successfully, print the solution</span>
+        <span class="hljs-keyword">if</span> (r == N)
+        {
+            <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; N; i++)
+            {
+                <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> j = <span class="hljs-number">0</span>; j &lt; N; j++)
+                    System.out.print(board[i][j] + <span class="hljs-string">&quot; &quot;</span>);
+                System.out.println();
+            }
+            System.out.println();
+            <span class="hljs-keyword">return</span>;
+        }
+
+        <span class="hljs-comment">// place Queen at every square in current row r</span>
+        <span class="hljs-comment">// and recur for each valid movement</span>
+        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; N; i++)
+        {
+            <span class="hljs-comment">// if no two queens threaten each other</span>
+            <span class="hljs-keyword">if</span> (isSafe(board, r, i))
+            {
+                <span class="hljs-comment">// place queen on current square</span>
+                board[r][i] = <span class="hljs-number">1</span>;
+                <span class="hljs-comment">// recur for next row</span>
+                nQueen(board, r + <span class="hljs-number">1</span>);
+                <span class="hljs-comment">// backtrack and remove queen from current square</span>
+                board[r][i] = <span class="hljs-number">0</span>;
+            }
+        }
+    }
+
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span>
+    </span>{
+        <span class="hljs-comment">// board[][] keeps track of position of Queens in</span>
+        <span class="hljs-comment">// the current configuration</span>
+        <span class="hljs-keyword">int</span>[][] board = <span class="hljs-keyword">new</span> <span class="hljs-keyword">int</span>[N][N];
+
+        <span class="hljs-comment">// initialize board[][] by 0</span>
+        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; N; i++)
+        {
+            <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> j = <span class="hljs-number">0</span>; j &lt; N; j++)
+                board[i][j]=<span class="hljs-number">0</span>;
+        }
+
+        nQueen(board, <span class="hljs-number">0</span>);
+    }
+}
+</code></pre>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"1. N Queens Problem","level":"2.1.1","depth":2,"next":{"title":"[2. Warnsdorff’s Algorithm]","level":"2.1.2","depth":2,"ref":"","articles":[]},"previous":{"title":"[Backtracking]","level":"2.1","depth":1,"ref":"","articles":[{"title":"1. N Queens Problem","level":"2.1.1","depth":2,"path":"Backtracking-N-Queen-Problem.md","ref":"Backtracking-N-Queen-Problem.md","articles":[]},{"title":"[2. Warnsdorff’s Algorithm]","level":"2.1.2","depth":2,"ref":"","articles":[]},{"title":"[3. Word Break Problem]","level":"2.1.3","depth":2,"ref":"","articles":[]},{"title":"[4. Remove Invalid Parenthesis]","level":"2.1.4","depth":2,"ref":"","articles":[]},{"title":"[5. Match a pattern and string using regular expression]","level":"2.1.5","depth":2,"ref":"","articles":[]},{"title":"[6. Find Path from corner cell to middle cell in a maze]","level":"2.1.6","depth":2,"ref":"","articles":[]},{"title":"[7. Hamiltonian cycle]","level":"2.1.7","depth":2,"ref":"","articles":[]},{"title":"8. Sudoku","level":"2.1.8","depth":2,"path":"Backtracking-Sudoku.md","ref":"Backtracking-Sudoku.md","articles":[]},{"title":"[9. M Coloring Problem]","level":"2.1.9","depth":2,"ref":"","articles":[]},{"title":"[10. Rat in a Maze]","level":"2.1.10","depth":2,"ref":"","articles":[]},{"title":"[11. Print all permutations of a given string]","level":"2.1.11","depth":2,"ref":"","articles":[]},{"title":"[12. Crptarithmetic puzzle]","level":"2.1.12","depth":2,"ref":"","articles":[]},{"title":"[13. Find if there is a path of more than k length from a source]","level":"2.1.13","depth":2,"ref":"","articles":[]},{"title":"[14. Shortest safe route in a path with landmines]","level":"2.1.14","depth":2,"ref":"","articles":[]},{"title":"[15. Partition of a set into k subsets with equal sum]","level":"2.1.15","depth":2,"ref":"","articles":[]},{"title":"[16. longest possible route in a matrix with hurdles]","level":"2.1.16","depth":2,"ref":"","articles":[]},{"title":"[17. Print palindromic partitions string]","level":"2.1.17","depth":2,"ref":"","articles":[]},{"title":"[18. Print all possible paths from top left to bottom right of a mXn matrix]","level":"2.1.18","depth":2,"ref":"","articles":[]},{"title":"[19. Subset sum]","level":"2.1.19","depth":2,"ref":"","articles":[]},{"title":"[20. Tug of war]","level":"2.1.20","depth":2,"ref":"","articles":[]}]},"dir":"ltr"},"config":{"plugins":["katex","splitter","anchor-navigation-ex","github-buttons","copy-code-button","-lunr","-search","search-plus","-livereload","meta"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"meta":{"content":"","data":[{"name":"baidu-site-verification","content":"iFzduP9Qsi"},{"name":"google-site-verification","content":"qwgHd8kl7vEvBa4OR81jLieQG9UKcY2r8ocztMhzA8o"}],"name":""},"splitter":{},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"anchor-navigation-ex":{"associatedWithSummary":true,"float":{"floatIcon":"fa fa-navicon","level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"mode":"float","multipleH1":false,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showGoTop":true,"showLevel":true},"github-buttons":{"buttons":[{"user":"shunchizhou","repo":"leetcode","type":"star","size":"small","count":true}]},"copy-code-button":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"search-plus":{}},"theme":"default","author":"shunchizhou","pdf":{"pageNumbers":true,"fontSize":16,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"leetcode","language":"en","links":{"sidebar":{"Home":"http://shunchizhou.com"},"gitbook":true},"gitbook":"3.2.3","description":"leetcode刷题"},"file":{"path":"Backtracking-N-Queen-Problem.md","mtime":"2019-07-09T21:29:05.786Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-07-11T00:51:38.275Z"},"basePath":".","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="gitbook/gitbook.js"></script>
+    <script src="gitbook/theme.js"></script>
+    
+        
+        <script src="gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-github-buttons/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-copy-code-button/toggle.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search-plus/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search-plus/search.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
