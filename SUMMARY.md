@@ -33,5 +33,5 @@
 * [63. Unique Paths II](leetCode-63-Unique-Paths-II.md)
 * [66. Plus One](leetCode-66-Plus-One.md)
 * [67. Add Binary](leetCode-67-Add-Binary.md)
-* [69. Sqrt(x)](leetCode-67-Sqrt.md)
+* [69. Sqrt(x)](leetCode-69-Sqrt.md)
 
