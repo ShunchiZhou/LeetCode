@@ -17,13 +17,13 @@ If the solution does not exist, it will return false.
 In this output, the value 1 indicates the correct place for the queens.
 The 0 denotes the blank spaces on the chess board.
 
-```JAVA
-import java.util.Arrays;
+{%ace edit=true, lang='java'%} 
 
-class NQueen
-{
-	// N x N chessboard
-	public static final int N = 8;
+	import java.util.Arrays;	
+	class NQueen
+	{
+		// N x N chessboard
+		public static final int N = 8;
 
 	// Function to check if two queens threaten each other or not
 	static boolean isSafe(int board[][], int r, int c)
@@ -94,4 +94,4 @@ class NQueen
 		nQueen(board, 0);
 	}
 }
-```
+{%endace%}

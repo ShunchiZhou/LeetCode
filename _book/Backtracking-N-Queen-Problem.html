@@ -594,84 +594,81 @@ If the solution does not exist, it will return false.</p>
 0 0 1 0 0 0 0 0
 </code></pre><p>In this output, the value 1 indicates the correct place for the queens.
 The 0 denotes the blank spaces on the chess board.</p>
-<pre><code class="lang-JAVA"><span class="hljs-keyword">import</span> java.util.Arrays;
+<div class="ace"><div class="aceCode" data-config="{&quot;edit&quot;:true,&quot;lang&quot;:&quot;java&quot;,&quot;check&quot;:false,&quot;theme&quot;:false}">import java.util.Arrays;    
+    class NQueen
+    {
+        // N x N chessboard
+        public static final int N = 8;
 
-<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">NQueen</span>
-</span>{
-    <span class="hljs-comment">// N x N chessboard</span>
-    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">final</span> <span class="hljs-keyword">int</span> N = <span class="hljs-number">8</span>;
+    // Function to check if two queens threaten each other or not
+    static boolean isSafe(int board[][], int r, int c)
+    {
+        // return false if two queens share the same column
+        for (int i = 0; i &lt; r; i++)
+            if (board[i][c] == 1)
+                return false;
 
-    <span class="hljs-comment">// Function to check if two queens threaten each other or not</span>
-    <span class="hljs-function"><span class="hljs-keyword">static</span> <span class="hljs-keyword">boolean</span> <span class="hljs-title">isSafe</span><span class="hljs-params">(<span class="hljs-keyword">int</span> board[][], <span class="hljs-keyword">int</span> r, <span class="hljs-keyword">int</span> c)</span>
-    </span>{
-        <span class="hljs-comment">// return false if two queens share the same column</span>
-        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; r; i++)
-            <span class="hljs-keyword">if</span> (board[i][c] == <span class="hljs-number">1</span>)
-                <span class="hljs-keyword">return</span> <span class="hljs-keyword">false</span>;
+        // return false if two queens share the same \ diagonal
+        for (int i = r, j = c; i &gt;= 0 &amp;&amp; j &gt;= 0; i--, j--)
+            if (board[i][j] == 1)
+                return false;
 
-        <span class="hljs-comment">// return false if two queens share the same \ diagonal</span>
-        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = r, j = c; i &gt;= <span class="hljs-number">0</span> &amp;&amp; j &gt;= <span class="hljs-number">0</span>; i--, j--)
-            <span class="hljs-keyword">if</span> (board[i][j] == <span class="hljs-number">1</span>)
-                <span class="hljs-keyword">return</span> <span class="hljs-keyword">false</span>;
+        // return false if two queens share the same / diagonal
+        for (int i = r, j = c; i &gt;= 0 &amp;&amp; j &lt; N; i--, j++)
+            if (board[i][j] == 1)
+                return false;
 
-        <span class="hljs-comment">// return false if two queens share the same / diagonal</span>
-        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = r, j = c; i &gt;= <span class="hljs-number">0</span> &amp;&amp; j &lt; N; i--, j++)
-            <span class="hljs-keyword">if</span> (board[i][j] == <span class="hljs-number">1</span>)
-                <span class="hljs-keyword">return</span> <span class="hljs-keyword">false</span>;
-
-        <span class="hljs-keyword">return</span> <span class="hljs-keyword">true</span>;
+        return true;
     }
 
-    <span class="hljs-function"><span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">nQueen</span><span class="hljs-params">(<span class="hljs-keyword">int</span> board[][], <span class="hljs-keyword">int</span> r)</span>
-    </span>{
-        <span class="hljs-comment">// if N queens are placed successfully, print the solution</span>
-        <span class="hljs-keyword">if</span> (r == N)
+    static void nQueen(int board[][], int r)
+    {
+        // if N queens are placed successfully, print the solution
+        if (r == N)
         {
-            <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; N; i++)
+            for (int i = 0; i &lt; N; i++)
             {
-                <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> j = <span class="hljs-number">0</span>; j &lt; N; j++)
-                    System.out.print(board[i][j] + <span class="hljs-string">&quot; &quot;</span>);
+                for(int j = 0; j &lt; N; j++)
+                    System.out.print(board[i][j] + &quot; &quot;);
                 System.out.println();
             }
             System.out.println();
-            <span class="hljs-keyword">return</span>;
+            return;
         }
 
-        <span class="hljs-comment">// place Queen at every square in current row r</span>
-        <span class="hljs-comment">// and recur for each valid movement</span>
-        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; N; i++)
+        // place Queen at every square in current row r
+        // and recur for each valid movement
+        for (int i = 0; i &lt; N; i++)
         {
-            <span class="hljs-comment">// if no two queens threaten each other</span>
-            <span class="hljs-keyword">if</span> (isSafe(board, r, i))
+            // if no two queens threaten each other
+            if (isSafe(board, r, i))
             {
-                <span class="hljs-comment">// place queen on current square</span>
-                board[r][i] = <span class="hljs-number">1</span>;
-                <span class="hljs-comment">// recur for next row</span>
-                nQueen(board, r + <span class="hljs-number">1</span>);
-                <span class="hljs-comment">// backtrack and remove queen from current square</span>
-                board[r][i] = <span class="hljs-number">0</span>;
+                // place queen on current square
+                board[r][i] = 1;
+                // recur for next row
+                nQueen(board, r + 1);
+                // backtrack and remove queen from current square
+                board[r][i] = 0;
             }
         }
     }
 
-    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span>
-    </span>{
-        <span class="hljs-comment">// board[][] keeps track of position of Queens in</span>
-        <span class="hljs-comment">// the current configuration</span>
-        <span class="hljs-keyword">int</span>[][] board = <span class="hljs-keyword">new</span> <span class="hljs-keyword">int</span>[N][N];
+    public static void main(String[] args)
+    {
+        // board[][] keeps track of position of Queens in
+        // the current configuration
+        int[][] board = new int[N][N];
 
-        <span class="hljs-comment">// initialize board[][] by 0</span>
-        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; N; i++)
+        // initialize board[][] by 0
+        for (int i = 0; i &lt; N; i++)
         {
-            <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> j = <span class="hljs-number">0</span>; j &lt; N; j++)
-                board[i][j]=<span class="hljs-number">0</span>;
+            for(int j = 0; j &lt; N; j++)
+                board[i][j]=0;
         }
 
-        nQueen(board, <span class="hljs-number">0</span>);
+        nQueen(board, 0);
     }
-}
-</code></pre>
-
+}<br></div></div>
                                 
                                 </section>
                             
@@ -706,7 +703,7 @@ The 0 denotes the blank spaces on the chess board.</p>
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"1. N Queens Problem","level":"2.1.1","depth":2,"next":{"title":"[2. Warnsdorff’s Algorithm]","level":"2.1.2","depth":2,"ref":"","articles":[]},"previous":{"title":"[Backtracking]","level":"2.1","depth":1,"ref":"","articles":[{"title":"1. N Queens Problem","level":"2.1.1","depth":2,"path":"Backtracking-N-Queen-Problem.md","ref":"Backtracking-N-Queen-Problem.md","articles":[]},{"title":"[2. Warnsdorff’s Algorithm]","level":"2.1.2","depth":2,"ref":"","articles":[]},{"title":"[3. Word Break Problem]","level":"2.1.3","depth":2,"ref":"","articles":[]},{"title":"[4. Remove Invalid Parenthesis]","level":"2.1.4","depth":2,"ref":"","articles":[]},{"title":"[5. Match a pattern and string using regular expression]","level":"2.1.5","depth":2,"ref":"","articles":[]},{"title":"[6. Find Path from corner cell to middle cell in a maze]","level":"2.1.6","depth":2,"ref":"","articles":[]},{"title":"[7. Hamiltonian cycle]","level":"2.1.7","depth":2,"ref":"","articles":[]},{"title":"8. Sudoku","level":"2.1.8","depth":2,"path":"Backtracking-Sudoku.md","ref":"Backtracking-Sudoku.md","articles":[]},{"title":"[9. M Coloring Problem]","level":"2.1.9","depth":2,"ref":"","articles":[]},{"title":"[10. Rat in a Maze]","level":"2.1.10","depth":2,"ref":"","articles":[]},{"title":"[11. Print all permutations of a given string]","level":"2.1.11","depth":2,"ref":"","articles":[]},{"title":"[12. Crptarithmetic puzzle]","level":"2.1.12","depth":2,"ref":"","articles":[]},{"title":"[13. Find if there is a path of more than k length from a source]","level":"2.1.13","depth":2,"ref":"","articles":[]},{"title":"[14. Shortest safe route in a path with landmines]","level":"2.1.14","depth":2,"ref":"","articles":[]},{"title":"[15. Partition of a set into k subsets with equal sum]","level":"2.1.15","depth":2,"ref":"","articles":[]},{"title":"[16. longest possible route in a matrix with hurdles]","level":"2.1.16","depth":2,"ref":"","articles":[]},{"title":"[17. Print palindromic partitions string]","level":"2.1.17","depth":2,"ref":"","articles":[]},{"title":"[18. Print all possible paths from top left to bottom right of a mXn matrix]","level":"2.1.18","depth":2,"ref":"","articles":[]},{"title":"[19. Subset sum]","level":"2.1.19","depth":2,"ref":"","articles":[]},{"title":"[20. Tug of war]","level":"2.1.20","depth":2,"ref":"","articles":[]}]},"dir":"ltr"},"config":{"plugins":["katex","splitter","anchor-navigation-ex","github-buttons","copy-code-button","-lunr","-search","search-plus","-livereload","meta","ace"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"ace":{},"meta":{"content":"","data":[{"name":"baidu-site-verification","content":"iFzduP9Qsi"},{"name":"google-site-verification","content":"qwgHd8kl7vEvBa4OR81jLieQG9UKcY2r8ocztMhzA8o"}],"name":""},"splitter":{},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"anchor-navigation-ex":{"associatedWithSummary":true,"float":{"floatIcon":"fa fa-navicon","level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"mode":"float","multipleH1":false,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showGoTop":true,"showLevel":true},"github-buttons":{"buttons":[{"user":"shunchizhou","repo":"leetcode","type":"star","size":"small","count":true}]},"copy-code-button":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"search-plus":{}},"theme":"default","author":"shunchizhou","pdf":{"pageNumbers":true,"fontSize":16,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"leetcode","language":"en","links":{"sidebar":{"Home":"http://shunchizhou.com"},"gitbook":true},"gitbook":"3.2.3","description":"leetcode刷题"},"file":{"path":"Backtracking-N-Queen-Problem.md","mtime":"2019-09-24T02:43:15.773Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-09-24T03:08:58.498Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"1. N Queens Problem","level":"2.1.1","depth":2,"next":{"title":"[2. Warnsdorff’s Algorithm]","level":"2.1.2","depth":2,"ref":"","articles":[]},"previous":{"title":"[Backtracking]","level":"2.1","depth":1,"ref":"","articles":[{"title":"1. N Queens Problem","level":"2.1.1","depth":2,"path":"Backtracking-N-Queen-Problem.md","ref":"Backtracking-N-Queen-Problem.md","articles":[]},{"title":"[2. Warnsdorff’s Algorithm]","level":"2.1.2","depth":2,"ref":"","articles":[]},{"title":"[3. Word Break Problem]","level":"2.1.3","depth":2,"ref":"","articles":[]},{"title":"[4. Remove Invalid Parenthesis]","level":"2.1.4","depth":2,"ref":"","articles":[]},{"title":"[5. Match a pattern and string using regular expression]","level":"2.1.5","depth":2,"ref":"","articles":[]},{"title":"[6. Find Path from corner cell to middle cell in a maze]","level":"2.1.6","depth":2,"ref":"","articles":[]},{"title":"[7. Hamiltonian cycle]","level":"2.1.7","depth":2,"ref":"","articles":[]},{"title":"8. Sudoku","level":"2.1.8","depth":2,"path":"Backtracking-Sudoku.md","ref":"Backtracking-Sudoku.md","articles":[]},{"title":"[9. M Coloring Problem]","level":"2.1.9","depth":2,"ref":"","articles":[]},{"title":"[10. Rat in a Maze]","level":"2.1.10","depth":2,"ref":"","articles":[]},{"title":"[11. Print all permutations of a given string]","level":"2.1.11","depth":2,"ref":"","articles":[]},{"title":"[12. Crptarithmetic puzzle]","level":"2.1.12","depth":2,"ref":"","articles":[]},{"title":"[13. Find if there is a path of more than k length from a source]","level":"2.1.13","depth":2,"ref":"","articles":[]},{"title":"[14. Shortest safe route in a path with landmines]","level":"2.1.14","depth":2,"ref":"","articles":[]},{"title":"[15. Partition of a set into k subsets with equal sum]","level":"2.1.15","depth":2,"ref":"","articles":[]},{"title":"[16. longest possible route in a matrix with hurdles]","level":"2.1.16","depth":2,"ref":"","articles":[]},{"title":"[17. Print palindromic partitions string]","level":"2.1.17","depth":2,"ref":"","articles":[]},{"title":"[18. Print all possible paths from top left to bottom right of a mXn matrix]","level":"2.1.18","depth":2,"ref":"","articles":[]},{"title":"[19. Subset sum]","level":"2.1.19","depth":2,"ref":"","articles":[]},{"title":"[20. Tug of war]","level":"2.1.20","depth":2,"ref":"","articles":[]}]},"dir":"ltr"},"config":{"plugins":["katex","splitter","anchor-navigation-ex","github-buttons","copy-code-button","-lunr","-search","search-plus","-livereload","meta","ace"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"ace":{},"meta":{"content":"","data":[{"name":"baidu-site-verification","content":"iFzduP9Qsi"},{"name":"google-site-verification","content":"qwgHd8kl7vEvBa4OR81jLieQG9UKcY2r8ocztMhzA8o"}],"name":""},"splitter":{},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"anchor-navigation-ex":{"associatedWithSummary":true,"float":{"floatIcon":"fa fa-navicon","level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"mode":"float","multipleH1":false,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showGoTop":true,"showLevel":true},"github-buttons":{"buttons":[{"user":"shunchizhou","repo":"leetcode","type":"star","size":"small","count":true}]},"copy-code-button":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"search-plus":{}},"theme":"default","author":"shunchizhou","pdf":{"pageNumbers":true,"fontSize":16,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"leetcode","language":"en","links":{"sidebar":{"Home":"http://shunchizhou.com"},"gitbook":true},"gitbook":"3.2.3","description":"leetcode刷题"},"file":{"path":"Backtracking-N-Queen-Problem.md","mtime":"2019-09-24T03:25:40.033Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-09-24T03:40:52.438Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>
